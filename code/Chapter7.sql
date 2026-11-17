@@ -27,3 +27,16 @@ WHERE customer_id IN
         WHERE store_id = 2
     )
 ORDER BY customer_id, payment_date DESC;
+
+/*
+Query 2.b
+    NEEDS:
+        - Inner Join between customer and payment
+        - Display all payments for customers with store_id 2
+        - Order by customer_id and payment_date
+*/
+
+USE if26jacof_sakila;
+SELECT payment.customer_id, payment.payment_date, payment.amount FROM payment
+INNER JOIN customer on payment.customer_id = customer.customer_id
+WHERE customer.store_id = 2;
