@@ -36,7 +36,6 @@ Query 2.b
         - Order by customer_id and payment_date
 */
 
-USE if26jacof_sakila;
 SELECT payment.customer_id, payment.payment_date, payment.amount FROM payment
 INNER JOIN customer on payment.customer_id = customer.customer_id
 WHERE customer.store_id = 2;
